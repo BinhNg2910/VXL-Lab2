@@ -241,7 +241,6 @@ int main(void)
 
   /* Infinite loop */
   /* USER CODE BEGIN WHILE */
-//  HAL_GPIO_WritePin(EN0_GPIO_Port, EN0_Pin, RESET);
   while (1)
   {
     /* USER CODE END WHILE */
