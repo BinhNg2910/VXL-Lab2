@@ -64,8 +64,8 @@ all: main-build
 main-build: Lab2.elf secondary-outputs
 
 # Tool invocations
-Lab2.elf: $(OBJS) $(USER_OBJS) C:\Users\vanbi\OneDrive\ -\ hcmut.edu.vn\Subjects\VXL\Lab\Lab_2\Ex_Lab_2\STM32F103C6UX_FLASH.ld makefile objects.list $(OPTIONAL_TOOL_DEPS)
-	arm-none-eabi-gcc -o "Lab2.elf" @"objects.list" $(USER_OBJS) $(LIBS) -mcpu=cortex-m3 -T"C:\Users\vanbi\OneDrive - hcmut.edu.vn\Subjects\VXL\Lab\Lab_2\Ex_Lab_2\STM32F103C6UX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Lab2.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Lab2.elf: $(OBJS) $(USER_OBJS) C:\Users\Admin\OneDrive\ -\ hcmut.edu.vn\Subjects\VXL\Lab\Lab_2\Ex_Lab_2\STM32F103C6UX_FLASH.ld makefile objects.list $(OPTIONAL_TOOL_DEPS)
+	arm-none-eabi-gcc -o "Lab2.elf" @"objects.list" $(USER_OBJS) $(LIBS) -mcpu=cortex-m3 -T"C:\Users\Admin\OneDrive - hcmut.edu.vn\Subjects\VXL\Lab\Lab_2\Ex_Lab_2\STM32F103C6UX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Lab2.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
 	@echo 'Finished building target: $@'
 	@echo ' '
 
