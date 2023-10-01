@@ -197,6 +197,24 @@ void chooseSegment(int num)
 //	}
 }
 
+const int MAX_LED = 4;
+int index_led = 0;
+int led_buffer[4] = {1, 2, 3, 4};
+void update7SEG(int index){
+	switch(index){
+		case 0:
+			break;
+		case 1:
+			break;
+		case 2:
+			break;
+		case 3:
+			break;
+		default:
+			break;
+	}
+}
+
 /* USER CODE BEGIN PFP */
 
 /* USER CODE END PFP */
