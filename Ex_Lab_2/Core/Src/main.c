@@ -287,15 +287,26 @@ int main(void)
 	  		  HAL_GPIO_WritePin(COL7_GPIO_Port, COL7_Pin, RESET);
 	  		  HAL_GPIO_WritePin(GPIOB, matrix_buffer[index], RESET);
 	  		  break ;
-//	  	  default :
-//	  		  break ;
+	  	  default :
+	  		  break ;
 	  }
   }
 
-
+  void transition(){
+	  uint16_t temp = matrix_buffer[0];
+	  matrix_buffer[0] = matrix_buffer[1];
+	  matrix_buffer[1] = matrix_buffer[2];
+	  matrix_buffer[2] = matrix_buffer[3];
+	  matrix_buffer[3] = matrix_buffer[4];
+	  matrix_buffer[4] = matrix_buffer[5];
+	  matrix_buffer[5] = matrix_buffer[6];
+	  matrix_buffer[6] = matrix_buffer[7];
+	  matrix_buffer[7] = temp;
+  }
 
   setTimer1(10);
-  setTimer2(100);
+  setTimer2(20);
+  setTimer3(10);
 
   HAL_GPIO_WritePin(LED_RED_GPIO_Port, LED_RED_Pin, SET);
   HAL_GPIO_WritePin(DOT_GPIO_Port, DOT_Pin, SET);
@@ -334,10 +345,19 @@ int main(void)
 	  if(timer2_flag == 1){
 		  updateLEDMatrix(index_led_matrix);
 		  index_led_matrix++;
-		  if(index_led_matrix >= 8)
+		  if(index_led_matrix >= 8){
 			  index_led_matrix = 0;
-		  setTimer2(100);
+			  transition();
+		  }
+
+		  setTimer2(20);
+
 	  }
+
+//	  if(timer3_flag == 1){
+//		  transition();
+//		  setTimer3(10);
+//	  }
 	  /* USER CODE BEGIN 3 */
   }
   /* USER CODE END 3 */
