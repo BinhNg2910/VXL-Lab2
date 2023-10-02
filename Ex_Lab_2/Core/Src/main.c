@@ -242,7 +242,6 @@ int main(void)
 	  led_buffer[3] = minute % 10;
   }
   setTimer1(10);
-//  setTimer2(10);
   while (1)
   {
     /* USER CODE END WHILE */
@@ -270,11 +269,6 @@ int main(void)
 		  setTimer1(10);
 	  }
 
-//	  if(timer2_flag == 1){
-//		  setTimer2(10);
-//		  HAL_GPIO_TogglePin(LED_RED_GPIO_Port, LED_RED_Pin);
-//		  HAL_GPIO_TogglePin(DOT_GPIO_Port, DOT_Pin);
-//	  }
 
     /* USER CODE BEGIN 3 */
   }
