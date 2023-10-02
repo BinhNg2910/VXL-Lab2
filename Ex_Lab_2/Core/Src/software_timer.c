@@ -20,7 +20,7 @@ void setTimer1(int duration){
 
 void setTimer2(int duration){
 	timer2_counter = duration;
-	timer1_flag = 0;
+	timer2_flag = 0;
 }
 
 void timerRun(){
