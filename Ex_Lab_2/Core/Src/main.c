@@ -266,7 +266,7 @@ int main(void)
   HAL_GPIO_WritePin(EN2_GPIO_Port, EN2_Pin, SET);
   HAL_GPIO_WritePin(EN3_GPIO_Port, EN3_Pin, SET);
 
-  int hour = 15, minute = 8, second = 50;
+  int hour = 15, minute = 8, second = 0;
 
   void updateClockBuffer(){
 	  led_buffer[0] = hour / 10;
@@ -294,6 +294,8 @@ int main(void)
 	  update7SEG(index_led++);
 	  if(index_led >= 4)
 		  index_led = 0;
+	  HAL_GPIO_TogglePin(DOT_GPIO_Port, DOT_Pin);
+	  HAL_GPIO_TogglePin(LED_RED_GPIO_Port, LED_RED_Pin);
 	  HAL_Delay(100);
 
     /* USER CODE BEGIN 3 */
